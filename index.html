@@ -1,0 +1,545 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ina Noviyanti | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f5f8ff;
+    color: #17243a;
+}
+
+nav {
+    background: #091b36;
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    color: white;
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.logo span {
+    color: #ffd43b;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+nav ul a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+nav ul a:hover {
+    color: #ffd43b;
+}
+
+section {
+    padding: 90px 8%;
+}
+
+.hero {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    background: linear-gradient(120deg,#edf4ff,#ffffff);
+}
+
+.hero-text {
+    max-width: 650px;
+}
+
+.hero-text h4 {
+    color: #1769d2;
+    margin-bottom: 15px;
+}
+
+.hero-text h1 {
+    font-size: 50px;
+    color: #091b36;
+    line-height: 1.2;
+}
+
+.hero-text h1 span {
+    color: #1769d2;
+}
+
+.hero-text p {
+    color: #64748b;
+    margin-top: 20px;
+    line-height: 1.9;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 25px;
+    background: #1769d2;
+    color: white;
+    padding: 13px 25px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.btn:hover {
+    background: #091b36;
+}
+
+.profile {
+    width: 280px;
+    height: 340px;
+    background: #091b36;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffd43b;
+    font-size: 75px;
+    font-weight: 800;
+    box-shadow: 0 20px 40px #091b3630;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.title h2 {
+    color: #091b36;
+    font-size: 32px;
+}
+
+.title p {
+    color: #64748b;
+    margin-top: 10px;
+}
+
+.about {
+    display: flex;
+    gap: 35px;
+    align-items: center;
+}
+
+.about-box {
+    background: white;
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 5px 25px #00000008;
+    flex: 1;
+}
+
+.about-box h3 {
+    color: #1769d2;
+    margin-bottom: 15px;
+}
+
+.about-box p {
+    color: #64748b;
+    line-height: 1.9;
+}
+
+.skills {
+    background: #edf4ff;
+}
+
+.skill-list {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+}
+
+.skill-card {
+    background: white;
+    padding: 25px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px #00000008;
+}
+
+.skill-card i {
+    color: #1769d2;
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.skill-card h3 {
+    color: #091b36;
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 22px;
+}
+
+.project-card {
+    background: white;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 5px 25px #00000010;
+    transition: .3s;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+}
+
+.project-img {
+    height: 160px;
+    background: linear-gradient(135deg,#091b36,#1769d2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffd43b;
+    font-size: 55px;
+}
+
+.project-info {
+    padding: 22px;
+}
+
+.project-info h3 {
+    color: #091b36;
+    margin-bottom: 10px;
+}
+
+.project-info p {
+    color: #64748b;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.tags {
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+}
+
+.tags span {
+    background: #edf4ff;
+    color: #1769d2;
+    font-size: 11px;
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+
+.education {
+    background: #edf4ff;
+    text-align: center;
+}
+
+.education-box {
+    background: white;
+    padding: 30px;
+    max-width: 600px;
+    margin: auto;
+    border-radius: 18px;
+}
+
+.education-box h3 {
+    color: #1769d2;
+}
+
+.education-box p {
+    color: #64748b;
+    margin-top: 10px;
+}
+
+.contact {
+    background: #091b36;
+    color: white;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.contact p {
+    color: #cbd5e1;
+}
+
+.contact a {
+    color: #ffd43b;
+    text-decoration: none;
+}
+
+.contact-info {
+    margin-top: 30px;
+    line-height: 2.5;
+}
+
+footer {
+    background: #061326;
+    color: #cbd5e1;
+    text-align: center;
+    padding: 20px;
+    font-size: 13px;
+}
+
+@media(max-width:850px) {
+    .hero, .about {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-text h1 {
+        font-size: 38px;
+    }
+
+    .skill-list {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .projects {
+        grid-template-columns: 1fr;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">INA<span>.</span></div>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#project">Project</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<section class="hero" id="home">
+    <div class="hero-text">
+        <h4>HALO, SELAMAT DATANG DI PORTOFOLIO SAYA</h4>
+        <h1>Saya <span>Ina Noviyanti</span></h1>
+        <p>
+            Siswi kelas XII SMKN 1 Kawali jurusan
+            Rekayasa Perangkat Lunak (RPL).
+            Saya tertarik dengan dunia teknologi,
+            pemrograman, dan pengembangan website.
+        </p>
+        <a href="#project" class="btn">Lihat Proyek Saya</a>
+    </div>
+
+    <div class="profile">IN</div>
+</section>
+
+<section id="about">
+    <div class="title">
+        <h2>About Me</h2>
+        <p>Mengenal saya lebih dekat</p>
+    </div>
+
+    <div class="about">
+        <div class="about-box">
+            <h3>Profil Singkat</h3>
+            <p>
+                Saya adalah siswi SMKN 1 Kawali jurusan
+                Rekayasa Perangkat Lunak. Saya memiliki
+                minat dalam pengembangan aplikasi web,
+                desain antarmuka, dan pengelolaan database.
+                Saya merupakan pribadi yang disiplin,
+                bertanggung jawab, dan pekerja keras.
+            </p>
+        </div>
+
+        <div class="about-box">
+            <h3>Informasi Pribadi</h3>
+            <p>
+                Nama: Ina Noviyanti<br>
+                Domisili: Ciamis, Jawa Barat<br>
+                Sekolah: SMKN 1 Kawali<br>
+                Jurusan: Rekayasa Perangkat Lunak<br>
+                Tahun: 2024 - 2027
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="skills">
+    <div class="title">
+        <h2>My Skills</h2>
+        <p>Teknologi yang saya pelajari</p>
+    </div>
+
+    <div class="skill-list">
+        <div class="skill-card">
+            <i class="fa-brands fa-html5"></i>
+            <h3>HTML</h3>
+        </div>
+        <div class="skill-card">
+            <i class="fa-brands fa-css3-alt"></i>
+            <h3>CSS</h3>
+        </div>
+        <div class="skill-card">
+            <i class="fa-brands fa-js"></i>
+            <h3>JavaScript</h3>
+        </div>
+        <div class="skill-card">
+            <i class="fa-brands fa-php"></i>
+            <h3>PHP</h3>
+        </div>
+        <div class="skill-card">
+            <i class="fa-solid fa-database"></i>
+            <h3>MySQL</h3>
+        </div>
+        <div class="skill-card">
+            <i class="fa-brands fa-laravel"></i>
+            <h3>Laravel</h3>
+        </div>
+        <div class="skill-card">
+            <i class="fa-brands fa-figma"></i>
+            <h3>Figma</h3>
+        </div>
+        <div class="skill-card">
+            <i class="fa-solid fa-code"></i>
+            <h3>Web Development</h3>
+        </div>
+    </div>
+</section>
+
+<section id="project">
+    <div class="title">
+        <h2>My Projects</h2>
+        <p>Beberapa karya yang pernah saya buat</p>
+    </div>
+
+    <div class="projects">
+
+        <div class="project-card">
+            <div class="project-img">
+                <i class="fa-solid fa-book-open"></i>
+            </div>
+            <div class="project-info">
+                <h3>Website Perpustakaan</h3>
+                <p>
+                    Website pengelolaan data buku dan stok
+                    perpustakaan untuk memudahkan administrasi.
+                </p>
+                <div class="tags">
+                    <span>Laravel</span>
+                    <span>PHP</span>
+                    <span>MySQL</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-img">
+                <i class="fa-solid fa-building"></i>
+            </div>
+            <div class="project-info">
+                <h3>Company Profile Solusi Koneksi</h3>
+                <p>
+                    Website profil perusahaan yang menampilkan
+                    informasi, produk, artikel, galeri, dan kontak.
+                </p>
+                <div class="tags">
+                    <span>Laravel</span>
+                    <span>PHP</span>
+                    <span>MySQL</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-img">
+                <i class="fa-brands fa-figma"></i>
+            </div>
+            <div class="project-info">
+                <h3>Desain UI/UX Website</h3>
+                <p>
+                    Rancangan antarmuka website menggunakan
+                    Figma dengan fokus pada tata letak,
+                    navigasi, dan kenyamanan pengguna.
+                </p>
+                <div class="tags">
+                    <span>Figma</span>
+                    <span>UI Design</span>
+                    <span>UX</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="education">
+    <div class="title">
+        <h2>Education</h2>
+        <p>Riwayat pendidikan</p>
+    </div>
+
+    <div class="education-box">
+        <h3>SMKN 1 Kawali</h3>
+        <p>Rekayasa Perangkat Lunak (RPL)</p>
+        <p>2024 - 2027</p>
+    </div>
+</section>
+
+<section class="contact" id="contact">
+    <h2>Contact Me</h2>
+    <p>Terima kasih telah mengunjungi website portofolio saya.</p>
+
+    <div class="contact-info">
+        <p><i class="fa-brands fa-whatsapp"></i>
+        <a href="https://wa.me/6281214827710">081214827710</a></p>
+
+        <p><i class="fa-solid fa-envelope"></i>
+        <a href="mailto:ina.noviyanti26@gmail.com">
+        ina.noviyanti26@gmail.com</a></p>
+
+        <p><i class="fa-solid fa-location-dot"></i>
+        Ciamis, Jawa Barat</p>
+    </div>
+</section>
+
+<footer>
+    © 2026 Ina Noviyanti | Personal Portfolio
+</footer>
+
+</body>
+</html>
